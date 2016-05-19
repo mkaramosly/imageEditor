@@ -1,13 +1,17 @@
 /*
     COLORS
-    Silver: #EAF2E3
-    Teal: #61E8E1
-    Red: #F25757
-    Yellow: #F2E863
-    Gold: #F2CD60
+    Blue: #5BC0EB
+    Black: #211A1E
+    Red: #C3423F
+    Yellow: #FDE74C
+    Green: #9BC53D
 */
 
 body {
+}
+
+h1 {
+    text-align: center;
 }
 
 #canvas {
@@ -38,6 +42,10 @@ body {
     margin-left: 60px;
     width: 65%;
     box-sizing: border-box;
+}
+.select-list {
+    margin: 0 auto;
+    width: 430px;
 }
 
 .gamma {
