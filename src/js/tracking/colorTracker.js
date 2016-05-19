@@ -1,13 +1,4 @@
-var showCameraFeed = function() {
-    document.getElementById('cameraFeed').style.display = 'block';
-};
-
-var hideCameraFeed = function() {
-    document.getElementById('cameraFeed').style.display = 'none';
-};
-
-// Initializes the camera feed.
-document.getElementById('camera-button').onclick = function () {
+var initializeCameraFeed = function () {
     var colors = new tracking.ColorTracker(['magenta', 'cyan', 'yellow']);
 
     colors.on('track', function (event) {
@@ -21,6 +12,4 @@ document.getElementById('camera-button').onclick = function () {
     });
 
     tracking.track('#cameraFeed', colors, {camera: true});
-    showCameraFeed();
-};
-
+}
