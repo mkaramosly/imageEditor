@@ -6,11 +6,18 @@
 </head>
 <body>
 <div class="mainContainer">
+
 	<canvas id="canvas" height="800px" width="1200px">
 
 	</canvas>
 
 	<div class="controls">
+		<div class="gamma">Gamma
+			<input type="range" name="gamma" min="0" max="100">
+		</div>
+		<div class="black-white">Black & White
+			<input type="checkbox" name="black-white" class="black-white-input" value="true">
+		</div>
 		<div class="select select-pattern">Pattern
 			<select>
 				<option>Circle</option>

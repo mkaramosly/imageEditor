@@ -40,6 +40,15 @@ body {
     box-sizing: border-box;
 }
 
+.gamma {
+    width: 250px;
+    display: inline-block;
+}
+
+.black-white {
+    width: 150px;
+    display: inline-block;
+}
 .tool,
 .select {
     margin: 0 auto;
