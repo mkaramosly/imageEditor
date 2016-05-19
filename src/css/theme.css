@@ -28,11 +28,13 @@ body {
 
 .controls {
     padding: 25px;
-    border-radius: 5px;
+    border-radius: 10px;
     border: solid 1px black;
     margin: 60px;
-    width: 61%;
+    width: 65%;
+    box-sizing: border-box;
 }
+
 .tool,
 .select {
     margin: 0 auto;
