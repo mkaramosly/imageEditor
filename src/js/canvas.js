@@ -9,6 +9,7 @@ function editCan(can, img) {
 			isDrawing: false,
 
 			init: function (canvas, image) {
+				debugger;
 				me = this;
 				if (typeof canvas === "string") {
 					me.canvas = document.getElementById(canvas);
@@ -18,6 +19,7 @@ function editCan(can, img) {
 				if (typeof image === "string") {
 					me.img = new Image();
 					me.img.onload = function () {
+						debugger;
 						ratio = me.img.width / me.img.height;
 
 						if (me.img.width > 800) {
@@ -35,27 +37,41 @@ function editCan(can, img) {
 						me.ctx = me.canvas.getContext('2d');
 						me.ctx.drawImage(me.img, 0, 0, me.canvas.width, me.canvas.height); // 800  , 600);
 					}
-					me.img.src = image + '?rand=' + Math.random();
+					me.img.src = image; // + '?rand=' + Math.random(); // avoid caching of the image
 					me.img.style = "border: 1px black solid;"
-				} else if (typeof canvas === "object") {
+				}
+
+				if (typeof canvas === "object") {
 					me.img = image;
 					me.ctx = me.canvas.getContext('2d');
 					me.ctx.drawImage(me.img, 0, 0);
 				}
 
 				if ('ontouchstart' in document) {
-					me.canvas.addEventListener('touchstart', me.draw, false);
-					me.canvas.addEventListener('touchmove', me.draw, false);
-					me.canvas.addEventListener('touchend', me.draw, false);
+					//me.canvas.addEventListener('touchstart', me.draw, false);
+					//me.canvas.addEventListener('touchmove', me.draw, false);
+					//me.canvas.addEventListener('touchend', me.draw, false);
 				} else {
-					me.canvas.addEventListener('mousedown', function (event) {
-						me.draw(event);
-						event.preventDefault();
-					}, false);
-					me.canvas.addEventListener('mousemove', me.draw, false);
-					me.canvas.addEventListener('mouseup', me.draw, false);
-					me.canvas.addEventListener('mouseout', me.draw, false);
+					//me.canvas.addEventListener('mousedown', function (event) {
+					//	me.draw(event);
+					//	event.preventDefault();
+					//}, false);
+					//me.canvas.addEventListener('mousemove', me.draw, false);
+					//me.canvas.addEventListener('mouseup', me.draw, false);
+					//me.canvas.addEventListener('mouseout', me.draw, false);
 				}
+
+				me.canvas.addEventListener('touchstart', me.draw, false);
+				me.canvas.addEventListener('touchmove', me.draw, false);
+				me.canvas.addEventListener('touchend', me.draw, false);
+
+				me.canvas.addEventListener('mousedown', function (event) {
+					me.draw(event);
+					event.preventDefault();
+				}, false);
+				me.canvas.addEventListener('mousemove', me.draw, false);
+				me.canvas.addEventListener('mouseup', me.draw, false);
+				me.canvas.addEventListener('mouseout', me.draw, false);
 
 			},
 
