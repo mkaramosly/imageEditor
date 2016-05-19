@@ -154,5 +154,4 @@ function editCan(can, img) {
 	editCanvas.drawer.init(can, img);
 	return editCanvas;
 
-
 }
