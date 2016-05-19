@@ -9,7 +9,6 @@ function editCan(can, img) {
 			isDrawing: false,
 
 			init: function (canvas, image) {
-				debugger;
 				me = this;
 				if (typeof canvas === "string") {
 					me.canvas = document.getElementById(canvas);
@@ -19,7 +18,6 @@ function editCan(can, img) {
 				if (typeof image === "string") {
 					me.img = new Image();
 					me.img.onload = function () {
-						debugger;
 						ratio = me.img.width / me.img.height;
 
 						if (me.img.width > 800) {
