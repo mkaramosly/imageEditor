@@ -1,23 +1,23 @@
 <!DOCTYPE html >
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="src/css/theme.css" />
-<script type="application/javascript" src="src/js/canvas.js"></script>
+    <link rel="stylesheet" type="text/css" href="src/css/theme.css"/>
+    <script type="application/javascript" src="src/js/canvas.js"></script>
+    <script src="vendor/tracking.js/build/tracking-min.js"></script>
 </head>
 <body>
 
 <h1>Canvas!</h1>
 <canvas id="canvas" height="600px" width="800px">
-
 </canvas>
 
 
 <img id="myImg" src="https://www.google.com/logos/doodles/2016/yuri-kochiyamas-95th-birthday-5723472594468864-hp.jpg"/>
 
 <form action="upload.php" method="post" enctype="multipart/form-data">
-	Select image to upload:
-	<input type="file" name="fileToUpload" id="fileToUpload">
-	<input type="submit" value="Upload Image" name="submit">
+    Select image to upload:
+    <input type="file" name="fileToUpload" id="fileToUpload">
+    <input type="submit" value="Upload Image" name="submit">
 </form>
 
 <script type="text/javascript">
@@ -28,6 +28,9 @@ editCan(canvas, img);
 
 </script>
 
+
+<video id="cameraFeed" width="400" height="300" preload autoplay loop muted></video>
+<script src="src/js/tracking/colorTracker.js"></script>
 </body>
 <footer>
 
