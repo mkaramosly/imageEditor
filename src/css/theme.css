@@ -1,9 +1,38 @@
-#canvas {
-	height: 400px;
-	height: 80%;
-	border: solid 1px black;
+/*
+    COLORS
+    Silver: #EAF2E3
+    Teal: #61E8E1
+    Red: #F25757
+    Yellow: #F2E863
+    Gold: #F2CD60
+*/
+
+body {
+    background-color: #61E8E1;
 }
 
-/*body {*/
-	/*background-color: aqua;*/
-/*}*/
+#canvas {
+	width: 65%;
+	height: auto;
+	border: solid 1px black;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+.tools {
+    width: 25%;
+    display: inline-block;
+    float: right;
+    margin-top: 50px;
+}
+
+.controls {
+    padding: 10px;
+    border-radius: 5px;
+    border: solid 1px black;
+}
+
+.select {
+    display: inline-block;
+    margin: 0 auto;
+}

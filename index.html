@@ -1,58 +1,65 @@
-<!DOCTYPE html>
+<!DOCTYPE html >
 <html>
 <head>
-  <title></title>
+<link rel="stylesheet" type="text/css" href="src/css/theme.css" />
+<script type="application/javascript" src="src/js/canvas.js"></script>
 </head>
 <body>
-  <header>
 
-  </header>
-  <div class="image-window">
+<div class="tools">
+  <div class="gamma">Gamma
+    <input type="range" name="gamma" min="0" max="10">
+  </div>
+  <div class="black-white">
+    <input type="checkbox" name="black-white" class="black-white-input" value="true">Black & White
+  </div>
+</div>
 
+<h1>Canvas!</h1>
+<canvas id="canvas">
+
+</canvas>
+
+<div class="controls">
+  <div class="select select-pattern">Pattern
+    <select>
+      <option>Circle</option>
+      <option>Square</option>
+      <option>Triangle</option>
+      <option>Octagon</option>
+    </select>
   </div>
-  <div class="tools">
-    <div class="gamma">Gamma
-      <input type="range" name="gamma" min="0" max="10">
-    </div>
-    <div class="black-white">Black & White
-      <input type="checkbox" name="black-white" class="black-white-input" value="true">
-    </div>
+  <div class="select select-color">Color
+    <select>
+      <option>Black</option>
+      <option>Blue</option>
+      <option>Purple</option>
+      <option>Red</option>
+      <option>Orange</option>
+      <option>Yellow</option>
+      <option>Green</option>
+      <option>White</option>
+    </select>
   </div>
-  <div class="controls">
-    <div class="select-pattern">Pattern
-      <select>
-        <option>Circle</option>
-        <option>Square</option>
-        <option>Triangle</option>
-        <option>Octagon</option>
-      </select>
-    </div>
-    <div class="select-color">Color
-      <select>
-        <option>Black</option>
-        <option>Blue</option>
-        <option>Purple</option>
-        <option>Red</option>
-        <option>Orange</option>
-        <option>Yellow</option>
-        <option>Green</option>
-        <option>White</option>
-      </select>
-    </div>
-    <div class="select-thickness">Thickness
-      <select>
-        <option>2px</option>
-        <option>5px</option>
-        <option>10px</option>
-        <option>20px</option>
-      </select>
-    </div>
+  <div class="select select-thickness">Thickness
+    <select>
+      <option>2px</option>
+      <option>5px</option>
+      <option>10px</option>
+      <option>20px</option>
+    </select>
   </div>
-  <footer>
-    <button value="Upload Picture">Upload Picture</button>
-    <button value="Undo">Undo</button>
-    <button value="Redo">Redo</button>
-    <button value="Save">Save</button>
-  </footer>
+</div>
+
+
+<form action="upload.php" method="post" enctype="multipart/form-data">
+	Select image to upload:
+	<input type="file" name="fileToUpload" id="fileToUpload">
+	<input type="submit" value="Upload Image" name="submit">
+</form>
+
 </body>
+<footer>
+
+</footer>
 </html>
