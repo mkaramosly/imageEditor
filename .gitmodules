@@ -1,0 +1,3 @@
+[submodule "vendor/tracking.js"]
+	path = vendor/tracking.js
+	url = https://github.com/eduardolundgren/tracking.js
