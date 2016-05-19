@@ -1,9 +1,55 @@
-#canvas {
-	height: 400px;
-	height: 80%;
-	border: solid 1px black;
+/*
+    COLORS
+    Blue: #5BC0EB
+    Black: #211A1E
+    Red: #C3423F
+    Yellow: #FDE74C
+    Green: #9BC53D
+*/
+
+body {
+    background-color: #5BC0EB;
 }
 
-/*body {*/
-	/*background-color: aqua;*/
-/*}*/
+h1 {
+    text-align: center;
+}
+
+#canvas {
+	width: 65%;
+	height: auto;
+	border: solid 1px black;
+    display: inline-block;
+    margin: 0 60px;
+}
+
+.tools {
+    width: 25%;
+    display: inline-block;
+    float: right;
+    margin-top: 60px;
+}
+
+.controls {
+    padding: 25px;
+    border-radius: 10px;
+    border: solid 1px black;
+    margin: 60px;
+    width: 65%;
+    box-sizing: border-box;
+    background-color: #9BC53D;
+}
+.select-list {
+    margin: 0 auto;
+    width: 430px;
+}
+
+.tool,
+.select {
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.select {
+    display: inline-block;
+}
