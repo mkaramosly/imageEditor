@@ -36,6 +36,9 @@ button:hover {
 button:active {
     background-position: 0 top;
     position: relative;   
+
+#myImg {
+    visibility: hidden;
 }
 
 #canvas {
