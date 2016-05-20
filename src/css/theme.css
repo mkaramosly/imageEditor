@@ -8,10 +8,37 @@
 */
 
 body {
+    margin:0px; 
+    background: #eee;
 }
 
 h1 {
     text-align: center;
+}
+
+button,input {
+    padding: 5px 10px;
+    display: inline;
+    background: #777;
+    border: none;
+    background-color: #ababab;
+    color: #000;
+    font-size: 16px;
+    min-width: 80px;
+    margin: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 2px;
+}
+
+button:hover {
+    background-position: 0 -48px;
+     background-color: #dedede;
+}
+
+button:active {
+    background-position: 0 top;
+    position: relative;   
 }
 
 #myImg {
@@ -20,32 +47,42 @@ h1 {
 
 #canvas {
 	height: auto;
-	border: solid 1px black;
-    display: inline-block;
-    margin: 60px 60px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
 }
 
 .mainContainer {
     border: solid 1px #cccccc;
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
 
 }
 
-.tools {
-    width: 25%;
-    display: inline-block;
-    float: right;
-    margin-top: 10px;
+#tools {
+    position: absolute;
+    left:0px;
+    top:0px;
+    background-color: #cdcdcd;
+    padding: 20px;
+}
+
+#tools > *{
+    display: block;
 }
 
 .controls {
-    padding: 25px;
-    border-radius: 10px;
-    border: solid 1px black;
-    margin-left: 60px;
-    width: 65%;
+    background-color: #cdcdcd;
+    padding: 20px;
     box-sizing: border-box;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+.controls > *{
+    display: block;
 }
 .select-list {
     margin: 0 auto;
@@ -54,12 +91,12 @@ h1 {
 
 .gamma {
     width: 250px;
-    display: inline-block;
+    
 }
 
 .black-white {
     width: 150px;
-    display: inline-block;
+
 }
 .tool,
 .select {
@@ -68,5 +105,5 @@ h1 {
 }
 
 .select {
-    display: inline-block;
+  
 }
