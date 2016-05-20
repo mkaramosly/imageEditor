@@ -9,6 +9,7 @@
 
 body {
     margin:0px; 
+    background: #eee;
 }
 
 h1 {
@@ -20,9 +21,11 @@ button,input {
     display: inline;
     background: #777;
     border: none;
-    background-color: #cdcdcd;
+    background-color: #ababab;
     color: #000;
     font-size: 16px;
+    min-width: 80px;
+    margin: 10px;
     cursor: pointer;
     font-weight: bold;
     border-radius: 2px;
@@ -36,6 +39,7 @@ button:hover {
 button:active {
     background-position: 0 top;
     position: relative;   
+}
 
 #myImg {
     visibility: hidden;
@@ -43,9 +47,10 @@ button:active {
 
 #canvas {
 	height: auto;
-	border: solid 1px black;
-    display: inline-block;
-   
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
 }
 
 .mainContainer {
@@ -55,20 +60,29 @@ button:active {
 
 }
 
-.tools {
-    width: 25%;
-    display: inline-block;
-    float: right;
-    margin-top: 10px;
+#tools {
+    position: absolute;
+    left:0px;
+    top:0px;
+    background-color: #cdcdcd;
+    padding: 20px;
+}
+
+#tools > *{
+    display: block;
 }
 
 .controls {
-    padding: 25px;
-    border-radius: 10px;
-    border: solid 1px black;
-    margin-left: 60px;
-    width: 65%;
+    background-color: #cdcdcd;
+    padding: 20px;
     box-sizing: border-box;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+.controls > *{
+    display: block;
 }
 .select-list {
     margin: 0 auto;
@@ -77,12 +91,12 @@ button:active {
 
 .gamma {
     width: 250px;
-    display: inline-block;
+    
 }
 
 .black-white {
     width: 150px;
-    display: inline-block;
+
 }
 .tool,
 .select {
@@ -91,5 +105,5 @@ button:active {
 }
 
 .select {
-    display: inline-block;
+  
 }
