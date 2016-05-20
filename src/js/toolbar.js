@@ -6,6 +6,7 @@ $(document).ready(function () {
         hideAllTools();
         cameraFeed = initializeCameraFeed();
         $('#cameraFeed').show();
+        $('.flippable').addClass('flipped');
     });
 
     // When the pen tool button is clicked
@@ -14,6 +15,7 @@ $(document).ready(function () {
         destroyCameraFeed(cameraFeed);
         $('#myImg').show();
         $('.controls').show();
+        $('.flippable').removeClass('flipped');
     });
 
     function hideAllTools() {

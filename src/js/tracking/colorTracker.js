@@ -1,4 +1,9 @@
 var initializeCameraFeed = function () {
+    cameraWidth = 400;
+    cameraHeight = 300;
+    canvasWidth = 1200;
+    canvasHeight = 800;
+
     var video = document.getElementById('cameraFeed');
     var canvas = document.getElementById('canvas');
     var context = canvas.getContext('2d');
@@ -42,15 +47,15 @@ var initializeCameraFeed = function () {
     function draw(rect) {
         //drawSegments[segment].push(rect.x + rect.width / 2, rect.y + rect.height / 2);
         drawSegments[segment].push(
-            normalize(0, 1200, 0, 400, rect.x + rect.width / 2),
-            normalize(0, 800, 0, 300,  rect.y + rect.height / 2)
+            flip(normalize(canvasWidth,  cameraWidth,  rect.x + rect.width / 2), canvasWidth),
+            normalize(canvasHeight, cameraHeight, rect.y + rect.height / 2)
         );
     }
 
     function erase(rect) {
         context.clearRect(
-            normalize(0, 1200, 0, 400, rect.x),
-            normalize(0, 1200, 0, 400, rect.y),
+            flip(normalize(canvasWidth,  cameraWidth,  rect.x), canvasWidth),
+            normalize(canvasHeight, cameraHeight, rect.y),
             rect.width,
             rect.height
         );
@@ -73,13 +78,11 @@ var initializeCameraFeed = function () {
 var destroyCameraFeed = function(cameraFeed) {
 };
 
-// from: source min value
-// to: source max value
-// min: target min value
-// max: target max value
-// toNormalize: value to normalize
-function normalize(from, to, min, max, toNormalize)
+function normalize(source, target, val)
 {
-    var value = (toNormalize - min) * (to - from) / (max - min);
-    return value;
+    return val * source / target;
+}
+
+function flip(val, range) {
+    return range - (val % range);
 }
