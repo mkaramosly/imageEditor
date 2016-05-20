@@ -8,14 +8,27 @@
 */
 
 body {
+    margin:0px; 
+    background: #eee;
 }
 
 h1 {
     text-align: center;
 }
 
-#myImg {
-    visibility: hidden;
+button,input {
+    padding: 5px 10px;
+    display: inline;
+    background: #777;
+    border: none;
+    background-color: #ababab;
+    color: #000;
+    font-size: 16px;
+    min-width: 80px;
+    margin: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 2px;
 }
 
 
@@ -26,34 +39,73 @@ h1 {
 }
 
 
+button:hover {
+    background-position: 0 -48px;
+     background-color: #dedede;
+}
+
+button:active {
+    background-position: 0 top;
+    position: relative;   
+}
+
+video {
+    -moz-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    filter: FlipH;
+    transform: scale(-1, 1);
+}
+
+#canvas-wrapper{
+     display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:1200px;
+    height: 800px;
+    position: relative;
+}
+
 #canvas {
 	height: auto;
-	border: solid 1px black;
-    display: inline-block;
-    margin: 60px 60px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
 }
 
 .mainContainer {
     border: solid 1px #cccccc;
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
 
 }
 
-.tools {
-    width: 25%;
-    display: inline-block;
-    float: right;
-    margin-top: 10px;
+#tools {
+    position: absolute;
+    left:-140px;
+    top:0px;
+    background-color: #cdcdcd;
+    padding: 20px;
+    width:140px;
+}
+
+#tools > *{
+    display: block;
 }
 
 .controls {
-    padding: 25px;
-    border-radius: 10px;
-    border: solid 1px black;
-    margin-left: 60px;
-    width: 80%;
+    background-color: #cdcdcd;
+    padding: 20px;
     box-sizing: border-box;
+    position: absolute;
+    right: -300px;
+    top: 0px;
+    width: 300px;
+}
+
+.controls > *{
+    display: block;
 }
 .select-list {
     margin: 0 auto;
@@ -62,12 +114,12 @@ h1 {
 
 .gamma {
     width: 250px;
-    display: inline-block;
+    
 }
 
 .black-white {
     width: 150px;
-    display: inline-block;
+
 }
 .tool,
 .select {
@@ -76,5 +128,5 @@ h1 {
 }
 
 .select {
-    display: inline-block;
+  
 }
