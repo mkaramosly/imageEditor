@@ -38,35 +38,57 @@ try {
 		throw new RuntimeException('Exceeded filesize limit.');
 	}
 
-	// DO NOT TRUST $_FILES['upfile']['mime'] VALUE !!
-	// Check MIME Type by yourself.
-	$finfo = new finfo(FILEINFO_MIME_TYPE);
-	if (false === $ext = array_search(
-			$finfo->file($_FILES['upfile']['tmp_name']),
-			array(
-				'jpg' => 'image/jpeg',
-				'png' => 'image/png',
-				'gif' => 'image/gif',
-			),
-			true
-		)) {
-		throw new RuntimeException('Invalid file format.');
+	if (function_exists('finfo')) {
+		// DO NOT TRUST $_FILES['upfile']['mime'] VALUE !!
+		// Check MIME Type by yourself.
+		$finfo = new finfo(FILEINFO_MIME_TYPE);
+		if (false === $ext = array_search(
+				$finfo->file($_FILES['upfile']['tmp_name']),
+				array(
+					'jpg' => 'image/jpeg',
+					'png' => 'image/png',
+					'gif' => 'image/gif',
+				),
+				true
+			)) {
+			throw new RuntimeException('Invalid file format.');
+		}
+	} else {
+		switch($_FILES['upfile']['type']) {
+			case "image/jpeg" :
+				$ext = "jpg";
+				break;
+			case "image/png":
+				$ext = "png";
+				break;
+			case "image/gif":
+				$ext = "git";
+				break;
+		}
+//		$ext = pathinfo($_FILES['upfile']['tmp_name'], PATHINFO_EXTENSION);
 	}
 
 	// You should name it uniquely.
 	// DO NOT USE $_FILES['upfile']['name'] WITHOUT ANY VALIDATION !!
 	// On this example, obtain safe unique name from its binary data.
-	if (!move_uploaded_file(
+	//		sprintf('./uploads/%s.%s',
+//			sha1_file($_FILES['upfile']['tmp_name']),
+//			$ext
+//		)
+
+		$time = time();
+
+		if (!move_uploaded_file(
 		$_FILES['upfile']['tmp_name'],
 		sprintf('./uploads/%s.%s',
-			sha1_file($_FILES['upfile']['tmp_name']),
+			$time,
 			$ext
 		)
 	)) {
 		throw new RuntimeException('Failed to move uploaded file.');
 	}
 
-	echo 'File is uploaded successfully.';
+	echo "uploads/$time.$ext";
 
 } catch (RuntimeException $e) {
 

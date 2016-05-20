@@ -44,12 +44,13 @@
 <!--			</select>-->
 		</div>
 		<div class="select select-thickness">Thickness
-			<select id="thickness">
-				<option value="2">2px</option>
-				<option value="5">5px</option>
-				<option value="10">10px</option>
-				<option value="20">20px</option>
-			</select>
+<!--			<select id="thickness">-->
+<!--				<option value="2">2px</option>-->
+<!--				<option value="5">5px</option>-->
+<!--				<option value="10">10px</option>-->
+<!--				<option value="20">20px</option>-->
+<!--			</select>-->
+			<input type="range" id="thickness" value="1" min="1" max="100">
 		</div>
 	</div>
 	<div id="tools">
@@ -61,16 +62,14 @@
 		<img id="myImg" src="https://www.google.com/logos/doodles/2016/yuri-kochiyamas-95th-birthday-5723472594468864-hp.jpg"/>
 		<video id="cameraFeed" width="400" height="300" style="display: none" preload autoplay loop muted></video>
 	</div>
-	<form action="fileHandler.php" method="post" enctype="multipart/form-data">
+	<form id="imageUploadForm" action="fileHandler.php" method="post" enctype="multipart/form-data">
 		Select image to upload:
-		<input type="file" name="upfile" id="upfile">
+		<input type="file" name="upfile" id="ImageBrowse">
 		<input type="submit" value="Upload Image" name="submit">
 	</form>
 
 	<script type="text/javascript">
-		img = document.getElementById('myImg');
-		canvas = document.getElementById('canvas');
-		editCanvas = editCan(canvas, img);
+
 	</script>
 
 	<script src="src/js/tracking/colorTracker.js"></script>

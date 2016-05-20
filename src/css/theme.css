@@ -14,6 +14,10 @@ h1 {
     text-align: center;
 }
 
+#myImg {
+    visibility: hidden;
+}
+
 #canvas {
 	height: auto;
 	border: solid 1px black;

@@ -10,6 +10,7 @@ function editCan(can, img) {
 
 			init: function (canvas, image) {
 				me = this;
+
 				if (typeof canvas === "string") {
 					me.canvas = document.getElementById(canvas);
 				} else if (typeof canvas === "object") {
@@ -41,6 +42,7 @@ function editCan(can, img) {
 
 				if (typeof canvas === "object") {
 					me.img = image;
+					me.canvas.width += 0;
 					me.ctx = me.canvas.getContext('2d');
 					me.ctx.drawImage(me.img, 0, 0);
 				}
