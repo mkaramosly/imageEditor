@@ -83,19 +83,22 @@ function editCan(can, img) {
 				x = me.findPos(me.canvas).x;
 				y = me.findPos(me.canvas).y;
 				try {
-					if ('ontouchstart' in document) {
-						coors = {
-
-							x: event.targetTouches[0].pageX - x, //(event.targetTouches[0].pageX - ToolData.getScrollOffsets().x),  //targetTouches[0].pageX - ToolData.canvas.offsetWidth, //rect.top - root.scrollTop, //- ToolData.canvas.  //offsetLeft ,
-							y: event.targetTouches[0].pageY - y //(event.targetTouches[0].pageY - ToolData.getScrollOffsets().y) //targetTouches[0].pageY - ToolData.canvas.offsetHeight //rect.left - root.scrollLeft //- ToolData.canvas.offsetTop
-
-						};
-					} else {
+					// @ToDo: Fix this bug as event.targetTouches[0] does not exist in Chrome!
+					//if ('ontouchstart' in document) {
+					//
+					//	console.log(event);
+					//	coors = {
+					//
+					//		x: event.targetTouches[0].pageX - x, //(event.targetTouches[0].pageX - ToolData.getScrollOffsets().x),  //targetTouches[0].pageX - ToolData.canvas.offsetWidth, //rect.top - root.scrollTop, //- ToolData.canvas.  //offsetLeft ,
+					//		y: event.targetTouches[0].pageY - y //(event.targetTouches[0].pageY - ToolData.getScrollOffsets().y) //targetTouches[0].pageY - ToolData.canvas.offsetHeight //rect.left - root.scrollLeft //- ToolData.canvas.offsetTop
+					//
+					//	};
+					//} else {
 						coors = {
 							x: event.pageX - x,
 							y: event.pageY - y
 						};
-					}
+					//}
 				} catch (e) {
 					coors = {
 						x: null,
