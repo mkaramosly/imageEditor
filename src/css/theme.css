@@ -45,6 +45,15 @@ button:active {
     visibility: hidden;
 }
 
+#canvas-wrapper{
+     display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:1200px;
+    height: 800px;
+    position: relative;
+}
+
 #canvas {
 	height: auto;
     display: block;
@@ -62,10 +71,11 @@ button:active {
 
 #tools {
     position: absolute;
-    left:0px;
+    left:-140px;
     top:0px;
     background-color: #cdcdcd;
     padding: 20px;
+    width:140px;
 }
 
 #tools > *{
@@ -77,8 +87,9 @@ button:active {
     padding: 20px;
     box-sizing: border-box;
     position: absolute;
-    right: 0px;
+    right: -300px;
     top: 0px;
+    width: 300px;
 }
 
 .controls > *{
