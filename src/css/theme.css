@@ -80,16 +80,14 @@ video {
 }
 
 .mainContainer {
-    border: solid 1px #cccccc;
     width: 100%;
     margin: 0 auto;
-
 }
 
 #tools {
     position: absolute;
-    left:-140px;
-    top:0px;
+    left:-182px;
+    top:100px;
     background-color: #cdcdcd;
     padding: 20px;
     width:140px;
@@ -132,6 +130,21 @@ video {
     padding: 10px;
 }
 
+#myImg {
+    visibility: hidden;
+    display: none;
+}
+
+#logo {
+    position: absolute;
+    top:20px;
+    left:-120px;
+}
 .select {
   
+}
+
+#imageUploadForm {
+    width: 600px;
+    margin: 0 auto;
 }
