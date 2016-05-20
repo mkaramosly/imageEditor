@@ -15,41 +15,48 @@
 	</canvas>
 
 	<div class="controls">
-		<div class="gamma">Gamma
-			<input type="range" name="gamma" min="0" max="100">
-		</div>
-		<div class="black-white">Black & White
-			<input type="checkbox" name="black-white" class="black-white-input" value="true">
-		</div>
-		<div class="select select-pattern">Pattern
-			<select id="shape">
-				<option>Circle</option>
-				<option>Square</option>
-				<option>Triangle</option>
-				<option>Octagon</option>
-			</select>
-		</div>
-		<div class="select select-color">Color
 
-			<input id="color" type="color" />
-<!--			<select id="color">-->
-<!--				<option>Black</option>-->
-<!--				<option>Blue</option>-->
-<!--				<option>Purple</option>-->
-<!--				<option>Red</option>-->
-<!--				<option>Orange</option>-->
-<!--				<option>Yellow</option>-->
-<!--				<option>Green</option>-->
-<!--				<option>White</option>-->
+		<label for="text">Text</label>
+		<input id="text" type="text" />
+		<label for"font">Font</label>
+		<select id="font">
+			<option>Arial</option>
+			<option>Arial Black</option>
+			<option>Comic Sans MS</option>
+			<option>Courier New</option>
+			<option>Impact</option>
+			<option>Lucida Console</option>
+			<option>Lucida Sans Unicode</option>
+			<option>Times New Roman</option>
+			<option>Tahoma</option>
+			<option>Trebuchet MS</option>
+			<option>Verdana</option>
+		</select>
+		Position
+		<input type="range" id="xAxes" name="xAxes" min="0" max="100">X</input>
+		<input type="range" id="yAxes" name="yAxes" min="0" max="100">Y</input>
+
+		<input type="range" id="rotation" name="rotation" min="0" max="3.14" value="0">Rotation</input>
+		<button id="writeToCanvas">Write!</button>
+<!--		<div class="gamma">Gamma-->
+<!--			<input type="range" name="gamma" min="0" max="100">-->
+<!--		</div>-->
+<!--		<div class="black-white">Black & White-->
+<!--			<input type="checkbox" name="black-white" class="black-white-input" value="true">-->
+<!--		</div>-->
+
+<!--		<div class="select select-pattern">Pattern-->
+<!--			<select id="shape">-->
+<!--				<option>Circle</option>-->
+<!--				<option>Square</option>-->
+<!--				<option>Triangle</option>-->
+<!--				<option>Octagon</option>-->
 <!--			</select>-->
+<!--		</div>-->
+		<div class="select select-color">Color
+			<input id="color" type="color" />
 		</div>
 		<div class="select select-thickness">Thickness
-<!--			<select id="thickness">-->
-<!--				<option value="2">2px</option>-->
-<!--				<option value="5">5px</option>-->
-<!--				<option value="10">10px</option>-->
-<!--				<option value="20">20px</option>-->
-<!--			</select>-->
 			<input type="range" id="thickness" value="1" min="1" max="100">
 		</div>
 	</div>
